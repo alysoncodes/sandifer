@@ -1,0 +1,184 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+/**GLOBAL COLORS**/
+
+@white: #FFFFFF;
+@black: #1A1818;
+@yellow: #F0DB61;
+@beige: #F4F1E9;
+@dark: #0B2A2A;
+@pink: #AA1F66;
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+
+
+
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+
+
+
+@font-face {
+  font-family: 'avallon';
+  src: url('https://static1.squarespace.com/static/640a4105aefb0b04f89972a4/t/64419889271eb61594af812f/1682020490017/Avallon.woff') format('woff'), url('https://static1.squarespace.com/static/640a4105aefb0b04f89972a4/t/644198929e4f84365c0b1cf7/1682020498418/Avallon.woff2') format('woff2');
+}
+
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+html{
+  scroll-behavior:smooth;
+}
+
+Html, body {
+  overflow-x: hidden !important;
+}
+
+h1, h2{
+  text-transform: uppercase;
+  letter-spacing: -.13rem;
+}
+
+ h3 {
+  font-family: 'avallon' !important;
+}
+h4{
+  font-family: 'work sans' !important;
+  text-transform: uppercase;
+}
+
+
+
+//DEFINE KEYFRAMES
+
+
+
+
+//button centering on mobile
+
+@media @mobile {
+  .sqs-block-button * {
+    text-align: center!important;
+    z-index: 100!important;
+  }
+}
+
+//fixing button center issue
+@media @mobile{
+.sqs-block-button-container--left {
+display:block !important;
+  }
+
+.sqs-block-button-container--right {
+display:block !important;
+  }
+
+}
+
+
+//center text on mobile
+@media only screen and (max-width: 640px) {h1,h2,h3,h4,p{
+  text-align: center!important;
+  }}
+
+
+//button styling
+
+//button styling (white)
+
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+
+
+//making nav split
+
+.header-display-desktop {
+  
+  .header-title {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:-40%;
+    
+  }
+  .header-title img{
+    width: 95% !important;
+  }
+  .header-nav {
+    padding-left: 11vw !important;
+    //padding-right:10vw !important;
+    .header-nav-list {
+      display:flex;
+      justify-content:space-between;
+      
+      .header-nav-item--active a {
+        background: none !important;
+      }
+      /**
+      .header-nav-item--active a::before      {
+        content:"";
+        width:15px;
+        height:15px;
+        background-color:#0071FF;
+        display:inline-block;
+        border-radius:50%;
+        vertical-align:middle;
+      }**/
+      
+    }
+  }
+
+}
+
+.header-display-desktop .header-nav-item:nth-child(3) {
+opacity:0;
+  width: 200px !important;
+}
+
+.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(3) {
+  display:none;
+}
+
+
+
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+
+
+
+
+/*------------------------------------
+ * PAGES: HOME
+ *------------------------------------*/
+
+
+
+
+/*------------------------------------
+ * PAGES: Blog Home
+ *------------------------------------*/
+
