@@ -5,11 +5,11 @@
 /**GLOBAL COLORS**/
 
 @white: #FFFFFF;
-@black: #1A1818;
-@yellow: #F0DB61;
-@beige: #F4F1E9;
-@dark: #0B2A2A;
-@pink: #AA1F66;
+@black: #222011;
+@green: #958A3B;
+@blue: #667D89;
+@beige: #EAE9E6;
+
 
 /**BREAKPOINTS**/
 
@@ -39,8 +39,13 @@
 
 
 @font-face {
-  font-family: 'avallon';
-  src: url('https://static1.squarespace.com/static/640a4105aefb0b04f89972a4/t/64419889271eb61594af812f/1682020490017/Avallon.woff') format('woff'), url('https://static1.squarespace.com/static/640a4105aefb0b04f89972a4/t/644198929e4f84365c0b1cf7/1682020498418/Avallon.woff2') format('woff2');
+  font-family: 'avenir';
+  src: url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/644f18aceb934c59dd060510/1682905260298/AvenirNextLTPro-Regular.woff') format('woff'), url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/644f18b08bda4755d1fb1371/1682905264987/AvenirNextLTPro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'oliver';
+  src: url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/644f21a540407937fae3bb46/1682907558092/OliverLabel-Regular.woff') format('woff'), url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/644f21a9500cc0360cc78db1/1682907562050/OliverLabel-Regular.woff2') format('woff2');
 }
 
 /*------------------------------------
@@ -53,21 +58,21 @@ html{
 Html, body {
   overflow-x: hidden !important;
 }
-
-h1, h2{
-  text-transform: uppercase;
-  letter-spacing: -.13rem;
+h1, h2, h4 {
+  text-transform: uppercase !important;
 }
 
  h3 {
-  font-family: 'avallon' !important;
-}
-h4{
-  font-family: 'work sans' !important;
-  text-transform: uppercase;
+  font-family: 'orpheus pro' !important;
 }
 
+p{
+  font-family: 'avenir' !important;
+}
 
+p.sqsrte-large{
+  font-family: 'oliver' !important;
+}
 
 //DEFINE KEYFRAMES
 
@@ -104,6 +109,63 @@ display:block !important;
 
 //button styling
 
+//Fun Button
+#funbutton {text-transform: uppercase; letter-spacing: .25rem; font-weight: 400; transition: .2s ease; font-size: 1.1rem; white-space: nowrap;}
+
+#funbuttonarrow {text-align: center; transition: 1s ease;}
+
+#funbuttontext {margin-right: 1rem;}
+
+#funbuttonarrow span {margin-left: .35rem; position: relative; top: 0rem;}
+
+@media @desktop{#funbuttonarrow span::after{
+  background: url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
+  content: '';
+  height:3vw;
+  width: 3vw;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  display: inline-block;
+  transform: translateY(1vw);
+  z-index: 10;
+  }
+}
+
+@media @mobile{#funbuttonarrow span::after{
+  background: url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
+  content: '';
+  height:7vw;
+  width: 7vw;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  display: inline-block;
+  transform: translateY(1.5vw);
+  z-index: 10;
+  }
+}
+
+
+#funbutton:hover {
+  * {
+    color: @blue; transition: .2s ease;
+    letter-spacing: .25em;
+    transition: 1s ease;
+  }
+  
+ 
+#funbuttonarrow {
+  transform: translate(1vw,0); transition: 1s ease;}
+
+}
+
+//removing padding from the top of the button code block
+
+.code-block{
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 640px) {#funbutton {text-align: center!important;}}
+
 //button styling (white)
 
 
@@ -111,7 +173,17 @@ display:block !important;
 /*------------------------------------
  *  HEADER
  *------------------------------------*/
+.header-announcement-bar-wrapper{
+  background-color: @beige !important;
+}
 
+.header-actions-action .sqs-button-element--primary{
+  background-color: @blue !important;
+  font-family: 'presicav' !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  font-size: .8rem !important;
+}
 
 //making nav split
 
@@ -121,19 +193,17 @@ display:block !important;
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:-40%;
+    //top:%;
     
   }
-  .header-title img{
-    width: 95% !important;
-  }
+
   .header-nav {
-    padding-left: 11vw !important;
-    //padding-right:10vw !important;
+   padding-left: 5vw !important;
+   padding-right:2vw !important;
     .header-nav-list {
       display:flex;
       justify-content:space-between;
-      
+      align-items: center !important;
       .header-nav-item--active a {
         background: none !important;
       }
@@ -153,17 +223,24 @@ display:block !important;
 
 }
 
-.header-display-desktop .header-nav-item:nth-child(3) {
+.header-display-desktop .header-nav-item:nth-child(4) {
 opacity:0;
-  width: 200px !important;
+  width: 300px !important;
 }
 
-.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(3) {
+.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(4) {
   display:none;
 }
 
+.header-nav-item a{
+	font-size: calc(.7rem + .1vw);
 
-
+}
+.header-display-desktop .header-nav-item:nth-child(7) a{
+  background-color: @blue;
+  color: white !important;
+  padding: 1vw 1.6vw;
+}
 /*------------------------------------
  *  FOOTER
  *------------------------------------*/
@@ -175,10 +252,101 @@ opacity:0;
  * PAGES: HOME
  *------------------------------------*/
 
+//script font/ arrow
+
+#block-yui_3_17_2_1_1682900283050_48301{
+  transform: rotate(-10deg);
+}
+
+#block-yui_3_17_2_1_1682900283050_48301 p.sqsrte-large:after{
+  content: '';
+  //background-color: red !important;
+  width: 50%;
+  height: 100%;
+  background: url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/6455765c0cf5985864a7b1a5/1683322461022/sandifer-arrow.png');
+  position: absolute;
+  left: 10%;
+  top: 100%;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+//section 2
+
+@media @desktop{
+  #block-yui_3_17_2_1_1682900283050_50239{
+    margin-top: -9vw;
+  }
+}
+
+//bottom graphic decor position
+
+@media @desktop{
+  #block-yui_3_17_2_1_1682900283050_93064{
+    margin-top: -11vw;
+  }
+}
 
 
+//testimonial section
+
+
+
+/**CENTERED CAROUSEL ARROWS**/
+
+section.black {
+  div.summary-title{
+    margin-bottom: 3rem;
+  }
+  a.summary-title-link{
+    font-family: 'presicav';
+    text-transform: uppercase !important;
+    letter-spacing: .2rem;
+   
+  }
+  p.sqsrte-large{
+    font-size: 2rem!important;
+    margin-top: 3rem;
+    
+  }
+  
+   .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+      position: absolute;
+      top:103% !important;
+      z-index:99;
+      overflow:visible;
+      width:auto !important;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+ 
+     //CAROUSEL ARROWS
+.sqs-gallery-design-carousel .sqs-gallery-controls .next:before,
+.sqs-gallery-design-carousel .sqs-gallery-controls .previous:before {
+    content: '';
+    width: 75px;
+    height: 21px;
+   background-image:url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/6457ebac97c7b654ab9e3487/1683483564023/left_arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 38px;
+}
+.sqs-gallery-design-carousel .sqs-gallery-controls .next:before {
+    background-image:url('https://static1.squarespace.com/static/6418803f00d3736dace5b8c9/t/6457ebb064adaf26cc29090b/1683483568214/right_arrow.png');
+    margin-right: 0;
+}
+.sqs-gallery-design-carousel .sqs-gallery-controls .next,
+ .sqs-gallery-design-carousel .sqs-gallery-controls .previous {
+    display: inline;
+}
+ .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+    width: auto;
+    overflow: visible;
+}
+     
+  }
 
 /*------------------------------------
  * PAGES: Blog Home
  *------------------------------------*/
-
