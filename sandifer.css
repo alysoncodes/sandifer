@@ -61,6 +61,9 @@ Html, body {
 h1, h2, h4 {
   text-transform: uppercase !important;
 }
+h2{
+  letter-spacing: .16rem
+}
 
  h3 {
   font-family: 'orpheus pro' !important;
@@ -72,6 +75,12 @@ p{
 
 p.sqsrte-large{
   font-family: 'oliver' !important;
+}
+
+section .sticky{
+  position:-webkit-sticky;
+   position:sticky;
+   top:0px;
 }
 
 //DEFINE KEYFRAMES
@@ -110,52 +119,44 @@ display:block !important;
 //button styling
 
 //Fun Button
-#funbutton {text-transform: uppercase; letter-spacing: .25rem; font-weight: 400; transition: .2s ease; font-size: 1.1rem; white-space: nowrap;}
-
-#funbuttonarrow {text-align: center; transition: 1s ease;}
-
-#funbuttontext {margin-right: 1rem;}
-
-#funbuttonarrow span {margin-left: .35rem; position: relative; top: 0rem;}
-
-@media @desktop{#funbuttonarrow span::after{
-  background: url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
-  content: '';
-  height:3vw;
-  width: 3vw;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  display: inline-block;
-  transform: translateY(1vw);
-  z-index: 10;
-  }
+#funbutton {
+  text-transform: uppercase; 
+  letter-spacing: .25rem; 
+  font-weight: 400; 
+  transition: .2s ease; 
+  font-size: 1.1rem; 
+  white-space: nowrap; 
+  font-family: 'presicav';
+  
 }
 
-@media @mobile{#funbuttonarrow span::after{
-  background: url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
-  content: '';
-  height:7vw;
-  width: 7vw;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  display: inline-block;
-  transform: translateY(1.5vw);
-  z-index: 10;
-  }
-}
 
 
 #funbutton:hover {
+  path#right{
+  fill: #958A3B !important;
+}
   * {
-    color: @blue; transition: .2s ease;
-    letter-spacing: .25em;
+    color: #958A3B; transition: .2s ease;
+    letter-spacing: .28em;
     transition: 1s ease;
   }
-  
- 
-#funbuttonarrow {
-  transform: translate(1vw,0); transition: 1s ease;}
 
+}
+#funbutton{
+path#right{
+  fill: #222011;
+  transition: 1s ease;
+  
+}
+}
+
+#funbuttontext{
+   transition: 1s ease;
+}
+#funbutton svg{
+  width: 24%;
+  hieght: 10%;
 }
 
 //removing padding from the top of the button code block
@@ -245,7 +246,36 @@ opacity:0;
  *  FOOTER
  *------------------------------------*/
 
-
+footer{
+  .content-wrapper{
+    padding-left: 10vw !important;
+    padding-right: 10vw !important;
+  }
+  p a{
+    color: white !important;
+    text-decoration: none !important;
+    
+  }
+  a:hover{
+    color: #958A3B !important;
+  }
+  h4{
+    margin-top: 1rem!important;
+  }
+  h4 a{
+    font-size: .8rem;
+    letter-spacing: .2rem;
+    color: white !important;
+    text-decoration: none !important;
+    
+  }
+  h4 a:hover{
+    color: #958A3B !important;
+  }
+  p.sqsrte-large{
+    margin-bottom: 0!important;
+  }
+}
 
 
 /*------------------------------------
